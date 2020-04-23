@@ -17,7 +17,6 @@ app.route('/goods')
         res.send('你正在查询商品详情')
     })
     .post(function (req, res) {
-
         res.send('你正在创建商品')
     })
     .put(function (req, res) {

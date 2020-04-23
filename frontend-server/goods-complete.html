@@ -43,7 +43,7 @@
 
 
         const xhr = new XMLHttpRequest()
-        xhr.open('post', 'http://127.0.0.1:8000/goods')
+        xhr.open('put', 'http://127.0.0.1:8000/goods')
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify(goods))
         xhr.onreadystatechange = e => {
