@@ -13,8 +13,8 @@ app.all('*', function (req, res, next) {
     next()
 })
 app.route('/goods')
-    .get(function (req, res) {
-        res.send('你正在查询商品详情')
+    .get('/goods/:id', function (req, res) {
+        res.send('xin 查询商品：' + req.params.id)
     })
     .post(function (req, res) {
         res.send('你正在创建商品')
@@ -26,6 +26,8 @@ app.route('/goods')
         res.send('你正在删除商品')
     })
 
+    // @pathVariable  @requestParams @requestBody
+    // req.params.id  req.query.id   req.body
 app.get('/list', function (req, res, next) {
     console.log('查询列表暂时查询所有商品！')
     next()
