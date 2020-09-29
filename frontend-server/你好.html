@@ -1,0 +1,21 @@
+<div onclick="fn()">你好</div>
+<script>
+    var myurl
+    function fn() {
+        const input = document.createElement('input')
+        input.setAttribute('multiple', true)
+        input.type = "file"
+
+        input.onchange = function () {
+            const files = input.files
+            console.log('你选择了文件：', files)
+            for (let i = files.length - 1; i >= 0; i--) {
+                myurl = URL.createObjectURL(files[i])
+                console.log(myurl)
+            }
+        }
+        input.click()
+        window.open('file:///'+'D:')
+    }
+    
+</script>   
